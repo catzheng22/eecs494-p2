@@ -1,0 +1,4 @@
+Potential game name: Yuurei
+
+My gold spike mechanic features the ability to switch between two bodies of different color, where one body can only travel
+in areas of its respective color. In the game, the player will need to use this mechanic to navigate through obstacles and only wins once both bodies reach the "goal".
