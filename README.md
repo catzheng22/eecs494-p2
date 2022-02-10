@@ -1,11 +1,12 @@
 # EECS 494 Project 2
 ## Yuurei
-- Format: 2D platformer
-- Player has two ghosts that they switch between and use to navigate through obstacles. Ghosts can only move in areas of their respective color + grey zones.
+Format: 2D platformer
+
+Player has two ghosts that they switch between and use to navigate through obstacles. Ghosts can only move in areas of their respective color + grey zones.
 ### Controls
-Use arrow keys to move left, move right, and jump
-Press SPACE to fly
-Press SHIFT to switch between the two bodies
+- Use arrow keys to move left, move right, and jump
+- Press SPACE to fly
+- Press SHIFT to switch between the two bodies
 ### Mechanics
 - White ghost can only move on light backgrounds
 - Black ghost can only move on dark backgrounds
