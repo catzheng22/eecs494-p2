@@ -8,9 +8,6 @@ public class GameController : MonoBehaviour
 {
     public static GameController instance;
     public GameObject body1, body2;
-    // public GameObject tilemap1, tilemap2;
-    // private Color color1, color2;
-    private int level = 0; // 0 is main menu
 
     void Awake() {
         if (instance != null) {
@@ -28,7 +25,7 @@ public class GameController : MonoBehaviour
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.M) || Input.GetKeyDown(KeyCode.Escape)) {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene(0);
         }
         if (Input.GetKeyDown(KeyCode.Q) && SceneManager.GetActiveScene().name == "MainMenu") {
             Application.Quit();
@@ -39,12 +36,11 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void Win() {
-        level++;
-        if (level < 6) {
-            SceneManager.LoadScene("Level" + level);
+    public void NextLevel() {
+        if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings - 1) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         } else {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene(0);
         }
     }
 }

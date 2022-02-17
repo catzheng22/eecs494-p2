@@ -8,15 +8,38 @@ public class PlayerMovement : MonoBehaviour
     public bool active;
     public float moveSpeed = 3f;
     public Color myColor, dieColor;
+    public static int becomeGhostCount = 0;
 
     private float X, Y;
     private Vector2 direction;
     private Rigidbody2D rb2d;
+    private PolygonCollider2D collider;
+    private SpriteRenderer sprite;
     private Behaviour halo;
+    private bool solid = true;
+
+    public bool Solid {
+        get {
+            return solid;
+        }
+        set {
+            solid = value;
+            collider.enabled = solid;
+            if (solid) {
+                sprite.color = myColor;
+            } else {
+                sprite.color = new Color(myColor.r, myColor.g, myColor.b, myColor.a / 2);
+            }
+        }
+    }
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        collider = GetComponent<PolygonCollider2D>();
+        sprite = GetComponent<SpriteRenderer>();
+        myColor = sprite.color;
+
         halo = (Behaviour) GetComponent("Halo");
         halo.enabled = active;
     }
@@ -41,6 +64,15 @@ public class PlayerMovement : MonoBehaviour
             else {
                 rb2d.velocity = Vector2.zero;
             }
+
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                if (solid && becomeGhostCount > 0) {
+                    becomeGhostCount--;
+                    Solid = false;
+                } else {
+                    Solid = true;
+                }
+            }
         }
     }
 
@@ -53,9 +85,9 @@ public class PlayerMovement : MonoBehaviour
             if (other.GetComponent<Tilemap>().color == dieColor) {
                 StartCoroutine(Die());
             }
-            else if (other.GetComponent<Tilemap>().color == myColor) {
-                other.GetComponent<Tilemap>().color = dieColor;
-            }
+            // else if (other.GetComponent<Tilemap>().color == myColor) {
+            //     other.GetComponent<Tilemap>().color = dieColor;
+            // }
         }
     }
 
@@ -63,13 +95,13 @@ public class PlayerMovement : MonoBehaviour
         active = false;
         rb2d.velocity = Vector2.zero;
 
-        Color objectColor = GetComponent<SpriteRenderer>().color;
+        Color objectColor = sprite.color;
         float fadeAmount;
-        while (GetComponent<SpriteRenderer>().color.a > 0)
+        while (sprite.color.a > 0)
         {
             fadeAmount = objectColor.a - (3 * Time.deltaTime);
             objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
-            GetComponent<SpriteRenderer>().color = objectColor;
+            sprite.color = objectColor;
             yield return null;
         }
 

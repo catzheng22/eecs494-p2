@@ -24,7 +24,7 @@ public class Goal : MonoBehaviour
             transform.localScale *= 2f;
         }
         else if (playersReachedGoal.Length == 2) {
-            GameController.instance.Win();
+            GameController.instance.NextLevel();
         }
     }
 

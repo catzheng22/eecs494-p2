@@ -25,7 +25,7 @@ public class LevelObject : MonoBehaviour
             transform.localScale *= 2f;
         }
         else if (selected.Length == 2) {
-            SceneManager.LoadScene("Level" + level);
+            SceneManager.LoadScene(level);
         }
     }
 

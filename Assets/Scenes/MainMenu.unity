@@ -758,14 +758,19 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Arrow keys - move
+  m_Text: '-Controls-
+
+    Arrow keys - move
 
     shift - swap
 
-    ESC - return home
+    space - ?????????
 
-    q - quit
-    game'
+
+    ESC
+    - return home
+
+    q - quit game'
 --- !u!222 &858911456
 CanvasRenderer:
   m_ObjectHideFlags: 0
