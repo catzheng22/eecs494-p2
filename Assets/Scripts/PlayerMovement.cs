@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public bool active;
     public float moveSpeed = 3f;
-    public Color dieColor;
+    public Color myColor, dieColor;
 
     private float X, Y;
     private Vector2 direction;
@@ -19,11 +19,6 @@ public class PlayerMovement : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         halo = (Behaviour) GetComponent("Halo");
         halo.enabled = active;
-        // if (active) {
-        //     dieColor = GameController.instance.color2;
-        // } else {
-        //     dieColor = GameController.instance.color1;
-        // }
     }
 
     void Update()
@@ -53,8 +48,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.GetComponent<Tilemap>() != null && other.GetComponent<Tilemap>().color == dieColor) {
-            StartCoroutine(Die());
+        if (other.GetComponent<Tilemap>() != null) {
+            if (other.GetComponent<Tilemap>().color == dieColor) {
+                StartCoroutine(Die());
+            }
+            else if (other.GetComponent<Tilemap>().color == myColor) {
+                other.GetComponent<Tilemap>().color = dieColor;
+            }
         }
     }
 

@@ -5,12 +5,13 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
     public float revSpeed = 50f;
-    public LayerMask layerMask;
+    public LayerMask playerLayers;
     private Rigidbody2D rb2d;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        transform.localScale = Vector3.one / 2f;
     }
 
     private void FixedUpdate() {
@@ -18,15 +19,19 @@ public class Goal : MonoBehaviour
     }
 
     private void OnTriggerEnter2D() {
-        Collider2D[] others = Physics2D.OverlapBoxAll(rb2d.position, new Vector2(0.5f, 0.5f), rb2d.rotation, layerMask);
-        int count = 0;
-        foreach (var other in others) {
-            if (other.gameObject.CompareTag("Player")) {
-                count++;
-            }
+        Collider2D[] playersReachedGoal = Physics2D.OverlapBoxAll(rb2d.position, transform.localScale, rb2d.rotation, playerLayers);
+        if (playersReachedGoal.Length == 1) {
+            transform.localScale *= 2f;
         }
-        if (count >= 2) {
+        else if (playersReachedGoal.Length == 2) {
             GameController.instance.Win();
+        }
+    }
+
+    private void OnTriggerExit2D() {
+        Collider2D[] playersReachedGoal = Physics2D.OverlapBoxAll(rb2d.position, transform.localScale, rb2d.rotation, playerLayers);
+        if (playersReachedGoal.Length == 0) {
+            transform.localScale /= 2f;
         }
     }
 }
