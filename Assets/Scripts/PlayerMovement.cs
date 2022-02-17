@@ -26,11 +26,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
             active = !active;
             halo.enabled = active;
+            rb2d.velocity = Vector2.zero;
         }
 
         if (active) {
-            X = Input.GetAxis("Horizontal");
-            Y = Input.GetAxis("Vertical");
+            X = Input.GetAxisRaw("Horizontal");
+            Y = Input.GetAxisRaw("Vertical");
 
             if (Mathf.Abs(X) > 0 || Mathf.Abs(Y) > 0) {
                 direction.x = X;
