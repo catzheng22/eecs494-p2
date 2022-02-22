@@ -24,10 +24,7 @@ public class GameController : MonoBehaviour
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.M) || Input.GetKeyDown(KeyCode.Escape)) {
-            SceneManager.LoadScene(0);
-        }
-        if (Input.GetKeyDown(KeyCode.Q) && SceneManager.GetActiveScene().name == "MainMenu") {
+        if (Input.GetKeyDown(KeyCode.Q) && SceneManager.GetActiveScene().buildIndex == 0) {
             Application.Quit();
         }
     }
