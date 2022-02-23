@@ -85,9 +85,11 @@ public class PlayerMovement : MonoBehaviour
             if (other.GetComponent<Tilemap>().color == dieColor) {
                 StartCoroutine(Die());
             }
-            // else if (other.GetComponent<Tilemap>().color == myColor) {
-            //     other.GetComponent<Tilemap>().color = dieColor;
-            // }
+        }
+        else if (other.GetComponent<SpriteRenderer>() != null) {
+            if (other.GetComponent<SpriteRenderer>().color == dieColor) {
+                StartCoroutine(Die());
+            }
         }
     }
 

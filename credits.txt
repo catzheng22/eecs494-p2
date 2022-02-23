@@ -1,2 +1,5 @@
 Multiple Target Camera Script: https://www.youtube.com/watch?v=aLpixrPvlB8&t=75s
 Font used: https://assetstore.unity.com/packages/2d/fonts/free-pixel-font-thaleah-140059
+Pause menu tutorial: https://www.youtube.com/watch?v=tfzwyNS1LUY
+Camera background: https://assetstore.unity.com/packages/2d/environments/free-2d-adventure-beach-background-82090
+Camera movement reference: https://answers.unity.com/questions/645114/how-to-make-a-smash-bros-like-camera.html

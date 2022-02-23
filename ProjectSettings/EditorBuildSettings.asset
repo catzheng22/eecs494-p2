@@ -12,12 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 4e123ad22063b4aba9128f99d9dd0272
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
+    path: Assets/Scenes/Easy1.unity
     guid: 1a11259f2cd0b45ed81d3a9e910275c0
   - enabled: 1
-    path: Assets/Scenes/Level2.unity
-    guid: e007081bc43cb48bbac25c26f41d716a
-  - enabled: 1
-    path: Assets/Scenes/Level3.unity
+    path: Assets/Scenes/Easy2.unity
     guid: 689825ecf008e4faca44b1e16f7cef6a
+  - enabled: 1
+    path: Assets/Scenes/Easy3.unity
+    guid: 4fa98cd5514b7426d906ff9c43819f94
+  - enabled: 1
+    path: Assets/Scenes/MazeLevel.unity
+    guid: e007081bc43cb48bbac25c26f41d716a
   m_configObjects: {}

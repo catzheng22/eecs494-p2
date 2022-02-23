@@ -17,12 +17,6 @@ public class GameController : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        // color1 = tilemap1.GetComponent<Tilemap>().color;
-        // color2 = tilemap2.GetComponent<Tilemap>().color;
-    }
-
     void Update() {
         if (Input.GetKeyDown(KeyCode.Q) && SceneManager.GetActiveScene().buildIndex == 0) {
             Application.Quit();

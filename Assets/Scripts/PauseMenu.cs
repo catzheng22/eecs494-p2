@@ -18,7 +18,7 @@ public class PauseMenu : MonoBehaviour
             }
             paused = !paused;
         }
-        if (pauseMenu.active && Input.GetKeyDown(KeyCode.Q)) {
+        if (pauseMenu.activeSelf && Input.GetKeyDown(KeyCode.Q)) {
             Quit(0);
         }
     }

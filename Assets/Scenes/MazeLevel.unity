@@ -2700,7 +2700,7 @@ Tilemap:
     m_Data: {r: 0.94897467, g: 0.6053052, b: 0.71321285, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 0.6273585, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.14901961, g: 0.1764706, b: 0.3882353, a: 1}
   m_Origin: {x: -7, y: -6, z: 0}
   m_Size: {x: 33, y: 32, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -2753,6 +2753,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c414acaa960324c55be1b99e634838c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minSize: 5
+  maxSize: 9
   offset: {x: 0, y: 0, z: -10}
 --- !u!81 &777286516
 AudioListener:
@@ -2772,7 +2774,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.05490196, g: 0.0627451, b: 0.16078432, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

@@ -1,0 +1,15 @@
+My p2_gold_spike feedback talked about adding sprite outlines because the player characters are hard to see 
+when they're on the same background, adding a more appealing background/tiles, fixing player movement, as well 
+as general suggestions to flesh out my game more (e.g. adding a main menu, pause menu, audio/music, more 
+interesting levels, etc).
+
+As a result of my feedback, I added sprite outlines and fixed the player's rigidbody movement 
+so that they don't have momentum. These two seemed to be the biggest issues people were facing.
+To further improve the game experience, I did add a main menu, pause menu, background music,
+some sound effects, and I also made the camera movement keep all characters within the screen at all times, 
+since before this the camera would reposition to the center of both characters but would not zoom.
+I made the color of the background and wall tiles colors that I thought would better suit the theme of my 
+game (ghosts / nighttime), but didn't add a background image or special tiles because honestly, I ran out 
+of time. Finally, the most "game-changing" elements I added were moving tiles, tiles that would change color,
+and switches to trigger the color change, attempting to arrange these elements in an engaging way throughout
+certain levels.
